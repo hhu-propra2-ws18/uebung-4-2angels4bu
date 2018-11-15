@@ -17,7 +17,7 @@ public class KundeController{
     @Autowired
     KundeRepository kunden;
 
-    @GetMapping("/")
+    @GetMapping(path = "/")
     public String index(Model model) {
         List<Kunde> all = kunden.findAll();
         model.addAttribute("kunden", all);
@@ -26,6 +26,7 @@ public class KundeController{
     @GetMapping(path = "/orders/{id}")
     public String bestellungen(Model model, @PathVariable Long id) {
         Optional<Kunde> kunde = kunden.findById(id);
+        model.addAttribute("kunde", kunde);
         model.addAttribute("autos", kunde.get().getAutos());
         return "bestellungen";
     }
