@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>bestellungen</title>
+</head>
+<body>
+    <h1 th:text = "|${kunde.name}|"></h1>
+    <ul th:each = "auto : ${autos}">
+        <li th:href = "| ${auto.marke} -- ${auto.farbe} ( ${auto.hubraum} )|"></li>
+    </ul>
+    </tr>
+</body>
+</html>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -22,14 +22,12 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <td>Vorwerk & Co. KG</td>
-        <td>Wuppertal</td>
-        <td>89140</td>
+    <tr th:each = "kunde : ${kunden}">
+        <td th:text = "| ${kunde.name}|"></td>
+        <td th:text = "| ${kunde.stadt}|"></td>
+        <td th:text = "| ${kunde.plz}|"></td>
         <td>
-            <ul>
-                <li>Volkswagen -- schwarz (2000 ccm)</li>
-            </ul>
+            <a th:href = "@{'/orders/' + ${kunde.id}}">Bestellungen</a>
         </td>
     </tr>
     </tbody>
