@@ -27,7 +27,7 @@ public class KundeController{
     public String bestellungen(Model model, @PathVariable Long id) {
         Optional<Kunde> kunde = kunden.findById(id);
         model.addAttribute("kunde", kunde);
-        model.addAttribute("autos", kunde.get().getAutos());
+        model.addAttribute("autos",kunde.get().getAutos());
         return "bestellungen";
     }
 
