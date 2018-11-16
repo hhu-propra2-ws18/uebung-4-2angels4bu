@@ -19,4 +19,8 @@ public class Kunde {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Auto> autos;
 
+    private int getAnzahlAutos(){
+        return autos.size();
+    }
+
 }
